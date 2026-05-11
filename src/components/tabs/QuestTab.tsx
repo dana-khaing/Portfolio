@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { character } from '../../data/character'
 
 const rankColors: Record<string, string> = {
-  S: 'text-exp border-exp/60 bg-exp/10',
-  A: 'text-cyan border-cyan/60 bg-cyan/10',
+  S: 'text-exp border-exp/60 bg-exp/10 shadow-[0_0_8px_rgba(245,158,11,0.3)]',
+  A: 'text-cyan border-cyan/60 bg-cyan/10 shadow-[0_0_8px_rgba(168,85,247,0.3)]',
 }
 
 export default function QuestTab() {
@@ -20,8 +20,9 @@ export default function QuestTab() {
         >
           <div className="flex items-start gap-3">
             {/* Rank badge */}
-            <div className={`flex-shrink-0 w-8 h-8 rounded border flex items-center justify-center text-sm font-game font-bold ${rankColors[q.rank]}`}>
-              {q.rank}
+            <div className={`flex-shrink-0 flex flex-col items-center justify-center rounded border px-2 py-1 font-game font-bold ${rankColors[q.rank]}`}>
+              <span className="text-[8px] tracking-widest opacity-70">RANK</span>
+              <span className="text-lg leading-none">{q.rank}</span>
             </div>
 
             <div className="flex-1 min-w-0">
