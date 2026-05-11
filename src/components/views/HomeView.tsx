@@ -39,23 +39,22 @@ export default function HomeView({
 
       {/* Main area */}
       <div className="flex flex-1 overflow-hidden">
-        {/* Left column: HUD */}
-        <div className="w-64 flex-shrink-0 p-3 flex flex-col gap-3 border-r border-cyan/10">
+        {/* Left column: avatar HUD + quest log below */}
+        <div className="w-64 flex-shrink-0 flex flex-col gap-3 p-3 border-r border-cyan/10 overflow-hidden">
           <AvatarStatusBars avatarUrl={avatarUrl} onClick={onAvatarClick} />
+          {/* Quest log fills the rest of the left column */}
+          <div className="flex-1 overflow-hidden">
+            <NotificationLog />
+          </div>
         </div>
 
         {/* Center: Character stage */}
         <CharacterStage repos={repos} followers={followers} />
       </div>
 
-      {/* Bottom bar: notification log + nav */}
-      <div className="flex items-stretch border-t border-cyan/10">
-        <div className="flex-1 p-3 max-h-28 overflow-hidden">
-          <NotificationLog />
-        </div>
-        <div className="flex-shrink-0 border-l border-cyan/10 flex items-center">
-          <BottomNav active={activeTab} onSelect={onTabSelect} />
-        </div>
+      {/* Bottom nav — full width */}
+      <div className="border-t border-cyan/10">
+        <BottomNav active={activeTab} onSelect={onTabSelect} />
       </div>
     </motion.div>
   )
