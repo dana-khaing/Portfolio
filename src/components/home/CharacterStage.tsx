@@ -54,7 +54,7 @@ export default function CharacterStage({ repos, followers }: { repos: number; fo
             bg-gradient-to-b from-cyan/5 to-transparent animate-pulse-glow">
             <div className="w-40 h-40 rounded-full border border-cyan/20 flex items-center justify-center
               bg-gradient-to-b from-green/5 to-transparent">
-              <span className="text-6xl select-none">⚔</span>
+              <span className="text-6xl select-none">✦</span>
             </div>
           </div>
           {/* Orbit ring */}
@@ -69,6 +69,9 @@ export default function CharacterStage({ repos, followers }: { repos: number; fo
           </h1>
           <div className="text-sm text-cyan/80 mt-1 tracking-[0.3em] uppercase">
             {character.class}
+          </div>
+          <div className="text-xs text-muted/70 tracking-widest uppercase mt-0.5">
+            {character.subclass}
           </div>
         </div>
 
