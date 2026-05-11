@@ -17,17 +17,17 @@ interface StatusViewProps {
   onBack: () => void
 }
 
-const tabComponents: Record<TabKey, JSX.Element> = {
-  status: <></>,
-  skill:   <SkillTab />,
-  quest:   <QuestTab />,
-  edu:     <EduTab />,
-  party:   <EduTab />,
-  contact: <ContactTab />,
-}
-
 export default function StatusView({ avatarUrl, followers, activeTab, onTabSelect, onBack }: StatusViewProps) {
   const showStatusMain = activeTab === 'status'
+
+  const tabComponents: Record<TabKey, JSX.Element> = {
+    status:  <></>,
+    skill:   <SkillTab />,
+    quest:   <QuestTab />,
+    edu:     <EduTab />,
+    party:   <EduTab />,
+    contact: <ContactTab />,
+  }
 
   return (
     <motion.div
