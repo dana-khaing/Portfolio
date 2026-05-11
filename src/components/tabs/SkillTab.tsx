@@ -31,7 +31,7 @@ export default function SkillTab() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: gi * 0.1 }}
           >
-            <div className={`text-[10px] uppercase tracking-widest mb-2 font-game ${textColor}`}>
+            <div className={`text-xs uppercase tracking-widest mb-2 font-game ${textColor}`}>
               ◆ {group}
             </div>
             <div className="flex flex-col gap-2">

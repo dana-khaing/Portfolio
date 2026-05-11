@@ -11,7 +11,7 @@ const links = [
 export default function ContactTab() {
   return (
     <div className="h-full flex flex-col gap-3">
-      <div className="text-[10px] text-cyan/50 uppercase tracking-widest font-game mb-2">
+      <div className="text-xs text-cyan/50 uppercase tracking-widest font-game mb-2">
         ◆ Contact & Links
       </div>
       {links.map((link, i) => (
@@ -32,7 +32,7 @@ export default function ContactTab() {
                 <GameIcon name={link.icon} size={18} />
               </div>
               <div>
-                <div className="text-[10px] text-muted font-game">{link.label}</div>
+                <div className="text-xs text-muted font-game">{link.label}</div>
                 <div className={`text-sm font-game ${link.color} group-hover:text-cyan transition-colors`}>{link.value}</div>
               </div>
               <span className="ml-auto text-muted/40 group-hover:text-cyan/50 transition-colors text-xs">↗</span>
@@ -43,7 +43,7 @@ export default function ContactTab() {
                 <GameIcon name={link.icon} size={18} />
               </div>
               <div>
-                <div className="text-[10px] text-muted font-game">{link.label}</div>
+                <div className="text-xs text-muted font-game">{link.label}</div>
                 <div className={`text-sm font-game ${link.color}`}>{link.value}</div>
               </div>
             </div>
@@ -62,7 +62,7 @@ export default function ContactTab() {
           <span className="w-2 h-2 rounded-full bg-green animate-pulse" />
           <span className="text-sm font-game text-green">Available for Hire</span>
         </div>
-        <p className="text-[10px] text-muted">
+        <p className="text-xs text-muted">
           Open to Junior Software Engineering roles — London, UK
         </p>
       </motion.div>

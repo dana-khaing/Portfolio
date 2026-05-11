@@ -5,7 +5,7 @@ import { character } from '../../data/character'
 export default function EduTab() {
   return (
     <div className="h-full overflow-y-auto pr-1 flex flex-col gap-4">
-      <div className="text-[10px] text-cyan/50 uppercase tracking-widest font-game mb-2">
+      <div className="text-xs text-cyan/50 uppercase tracking-widest font-game mb-2">
         ◆ Education Milestones
       </div>
 
@@ -26,14 +26,14 @@ export default function EduTab() {
             <div className="game-panel rounded p-3 flex-1 border border-cyan/10 hover:border-cyan/30 transition-colors">
               <div className="flex items-start justify-between gap-2 mb-1">
                 <span className="text-sm font-game text-primary leading-tight">{e.title}</span>
-                <span className="text-[10px] font-game text-exp border border-exp/40 px-1.5 rounded flex-shrink-0">
+                <span className="text-xs font-game text-exp border border-exp/40 px-1.5 rounded flex-shrink-0">
                   +{e.xp} XP
                 </span>
               </div>
               <div className="text-[11px] text-cyan/60 font-game">{e.institution}</div>
               <div className="flex items-center justify-between mt-2">
-                <span className="text-[10px] text-muted">{e.year}</span>
-                <span className="text-[10px] text-green/70">{e.note}</span>
+                <span className="text-xs text-muted">{e.year}</span>
+                <span className="text-xs text-green/70">{e.note}</span>
               </div>
             </div>
           </motion.div>
@@ -41,7 +41,7 @@ export default function EduTab() {
       </div>
 
       {/* Experience section */}
-      <div className="text-[10px] text-cyan/50 uppercase tracking-widest font-game mt-2 mb-2">
+      <div className="text-xs text-cyan/50 uppercase tracking-widest font-game mt-2 mb-2">
         ◆ Work Experience
       </div>
       {character.experience.map((exp, i) => (
@@ -55,10 +55,10 @@ export default function EduTab() {
           <div className="flex items-center gap-2 mb-2">
             <GameIcon name="party" size={14} className="text-cyan" />
             <span className="text-sm font-game text-primary">{exp.role}</span>
-            <span className="text-[10px] text-muted border border-muted/30 px-1.5 rounded">{exp.type}</span>
+            <span className="text-xs text-muted border border-muted/30 px-1.5 rounded">{exp.type}</span>
           </div>
           <div className="text-[11px] text-cyan/60 font-game mb-2">{exp.company}</div>
-          <p className="text-[10px] text-muted leading-relaxed mb-2">{exp.description}</p>
+          <p className="text-xs text-muted leading-relaxed mb-2">{exp.description}</p>
           <div className="flex flex-wrap gap-1.5">
             {exp.traits.map(t => (
               <span key={t} className="text-[9px] font-game px-1.5 py-0.5 rounded bg-cyan/5 border border-cyan/20 text-cyan/70">

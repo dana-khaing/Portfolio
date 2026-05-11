@@ -1,11 +1,12 @@
 export const character = {
   name: 'Dana Khaing',
-  class: 'Software Engineer',
+  class: 'Code Mage',
+  subclass: 'Software Engineer',
   level: 22,
   location: 'London, UK',
   guild: 'Royal Holloway, University of London',
   hireable: true,
-  bio: 'Full-Stack Developer crafting scalable web applications. First Class Honours CS graduate, building powerful systems from frontend to backend.',
+  bio: 'Full-Stack Code Mage conjuring scalable web applications. First Class Honours CS graduate, weaving powerful systems from frontend to backend.',
 
   // Vitals (displayed as bars on home HUD and status screen)
   hp: { current: 285, max: 285 },   // Problem-solving resilience
