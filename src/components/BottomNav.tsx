@@ -25,7 +25,7 @@ interface BottomNavProps {
 
 export default function BottomNav({ active, onSelect }: BottomNavProps) {
   return (
-    <div className="flex items-center justify-center gap-1 px-4 py-2 border-t border-cyan/10">
+    <div className="flex items-center justify-center gap-1 px-4 py-2">
       {TABS.map((tab, i) => {
         const isActive = tab.key === active
         return (

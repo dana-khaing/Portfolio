@@ -49,11 +49,11 @@ export default function HomeView({
       </div>
 
       {/* Bottom bar: notification log + nav */}
-      <div className="flex items-end border-t border-cyan/10 max-h-36 overflow-hidden">
-        <div className="flex-1 p-3 overflow-y-hidden">
+      <div className="flex items-stretch border-t border-cyan/10">
+        <div className="flex-1 p-3 max-h-28 overflow-hidden">
           <NotificationLog />
         </div>
-        <div className="flex-shrink-0 border-l border-cyan/10">
+        <div className="flex-shrink-0 border-l border-cyan/10 flex items-center">
           <BottomNav active={activeTab} onSelect={onTabSelect} />
         </div>
       </div>
