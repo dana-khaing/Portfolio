@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion'
 import HomeView from './components/views/HomeView'
 import StatusView from './components/views/StatusView'
 import { useGitHub } from './hooks/useGitHub'
+import { calculateLevel } from './data/character'
 import { type TabKey } from './components/BottomNav'
 
 type View = 'home' | 'status'
@@ -11,6 +12,7 @@ export default function App() {
   const [view, setView] = useState<View>('home')
   const [activeTab, setActiveTab] = useState<TabKey>('status')
   const github = useGitHub()
+  const level = calculateLevel()
 
   const handleTabSelect = (tab: TabKey) => {
     if (view === 'home') setView('status')
@@ -34,15 +36,17 @@ export default function App() {
         }}
       />
 
-      {/* Main content — h-full needed so children can use h-full */}
+      {/* Main content */}
       <div className="relative z-10 flex-1 overflow-hidden h-full min-h-0">
         <AnimatePresence mode="wait">
           {view === 'home' ? (
             <HomeView
               key="home"
               avatarUrl={github.avatar_url}
+              name={github.name ?? 'Dana Khaing'}
               repos={github.public_repos}
               followers={github.followers}
+              level={level}
               activeTab={activeTab}
               onTabSelect={handleTabSelect}
               onAvatarClick={() => {
@@ -54,7 +58,10 @@ export default function App() {
             <StatusView
               key="status"
               avatarUrl={github.avatar_url}
+              name={github.name ?? 'Dana Khaing'}
+              location={github.location ?? 'London, UK'}
               followers={github.followers}
+              level={level}
               activeTab={activeTab}
               onTabSelect={setActiveTab}
               onBack={() => setView('home')}

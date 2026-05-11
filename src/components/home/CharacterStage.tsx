@@ -11,7 +11,7 @@ const TAGLINES = [
   'First Class CS Graduate',
 ]
 
-export default function CharacterStage({ repos, followers }: { repos: number; followers: number }) {
+export default function CharacterStage({ name, repos, followers }: { name: string; repos: number; followers: number }) {
   const [taglineIdx, setTaglineIdx] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [typing, setTyping] = useState(true)
@@ -65,7 +65,7 @@ export default function CharacterStage({ repos, followers }: { repos: number; fo
         {/* Name */}
         <div className="text-center">
           <h1 className="text-4xl font-game text-primary tracking-widest">
-            <GlitchText text={character.name} />
+            <GlitchText text={name} />
           </h1>
           <div className="text-sm text-cyan/80 mt-1 tracking-[0.3em] uppercase">
             {character.class}

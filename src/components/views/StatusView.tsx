@@ -11,13 +11,16 @@ import { character } from '../../data/character'
 
 interface StatusViewProps {
   avatarUrl: string
+  name: string
+  location: string
   followers: number
+  level: number
   activeTab: TabKey
   onTabSelect: (tab: TabKey) => void
   onBack: () => void
 }
 
-export default function StatusView({ avatarUrl, followers, activeTab, onTabSelect, onBack }: StatusViewProps) {
+export default function StatusView({ avatarUrl, name, location, followers, level, activeTab, onTabSelect, onBack }: StatusViewProps) {
   const showStatusMain = activeTab === 'status'
 
   const tabComponents: Record<TabKey, JSX.Element> = {
@@ -49,7 +52,7 @@ export default function StatusView({ avatarUrl, followers, activeTab, onTabSelec
           ステータス &nbsp; STATUS
         </div>
         <div className="ml-auto text-[10px] text-muted font-game">
-          {character.location}
+          {location}
         </div>
       </div>
 
@@ -57,7 +60,7 @@ export default function StatusView({ avatarUrl, followers, activeTab, onTabSelec
       <div className="flex flex-1 gap-4 p-4 overflow-hidden">
         {/* Left: avatar + vitals */}
         <div className="w-56 flex-shrink-0 flex flex-col gap-3">
-          <AvatarStatusBars avatarUrl={avatarUrl} onClick={onBack} />
+          <AvatarStatusBars avatarUrl={avatarUrl} level={level} onClick={onBack} />
           <div className="game-panel rounded p-3 text-[10px] font-game flex flex-col gap-1.5 text-muted">
             <div className="flex justify-between">
               <span>Followers</span>
@@ -88,9 +91,9 @@ export default function StatusView({ avatarUrl, followers, activeTab, onTabSelec
               >
                 {/* Character header */}
                 <div className="flex items-baseline gap-3">
-                  <span className="text-lg font-game text-primary">{character.name}</span>
+                  <span className="text-lg font-game text-primary">{name}</span>
                   <span className="text-sm text-cyan/60 font-game">{character.class}</span>
-                  <span className="text-xs text-muted font-game ml-auto">Lv. {character.level}</span>
+                  <span className="text-xs text-muted font-game ml-auto">Lv. {level}</span>
                 </div>
 
                 {/* Vital bars */}
