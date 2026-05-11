@@ -14,7 +14,7 @@ export default function NotificationLog() {
 
   return (
     <div className="game-panel rounded p-3 flex flex-col gap-1 min-w-[240px] max-w-[300px]">
-      <div className="text-[10px] text-cyan/50 uppercase tracking-widest mb-1 font-game">
+      <div className="text-xs text-cyan/50 uppercase tracking-widest mb-1 font-game">
         ◆ Quest Log
       </div>
       <AnimatePresence>
@@ -22,7 +22,7 @@ export default function NotificationLog() {
           visible.includes(i) ? (
             <motion.div
               key={i}
-              className="text-[10px] text-muted font-game leading-relaxed"
+              className="text-xs text-muted font-game leading-relaxed"
               initial={{ x: -10, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
