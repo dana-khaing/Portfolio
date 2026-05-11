@@ -64,7 +64,7 @@ export default function CharacterStage({ repos, followers }: { repos: number; fo
 
         {/* Name */}
         <div className="text-center">
-          <h1 className="text-3xl font-game text-primary tracking-widest">
+          <h1 className="text-4xl font-game text-primary tracking-widest">
             <GlitchText text={character.name} />
           </h1>
           <div className="text-sm text-cyan/80 mt-1 tracking-[0.3em] uppercase">
@@ -76,7 +76,7 @@ export default function CharacterStage({ repos, followers }: { repos: number; fo
         </div>
 
         {/* Typewriter tagline */}
-        <div className="text-center font-game text-muted text-sm h-6">
+        <div className="text-center font-game text-muted text-base h-7">
           <span className="text-green/80">&gt; </span>
           <span>{displayed}</span>
           <span className="animate-pulse text-cyan">|</span>
