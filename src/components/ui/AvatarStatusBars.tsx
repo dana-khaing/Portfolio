@@ -38,9 +38,9 @@ export default function AvatarStatusBars({ avatarUrl, compact = false, onClick }
             <div className="absolute inset-0 rounded border border-cyan/20 animate-pulse-glow" style={{ animationDelay: '1s' }} />
           </div>
           <div className="min-w-0">
-            <div className="text-xs font-game text-primary truncate">{character.name}</div>
-            <div className="text-[10px] text-cyan/70 truncate">{character.class}</div>
-            <div className="text-[10px] text-muted">Lv. {character.level}</div>
+            <div className="text-sm font-game text-primary truncate">{character.name}</div>
+            <div className="text-xs text-cyan/70 truncate">{character.class}</div>
+            <div className="text-xs text-muted">Lv. {character.level}</div>
           </div>
         </div>
 
@@ -48,10 +48,10 @@ export default function AvatarStatusBars({ avatarUrl, compact = false, onClick }
         <div className={`flex flex-col gap-1.5 ${compact ? 'min-w-[140px]' : ''}`}>
           {bars.map(({ key, label, icon, color, data, delay }) => (
             <div key={key} className="flex items-center gap-1.5">
-              <GameIcon name={icon} size={10} className={
+              <GameIcon name={icon} size={12} className={
                 key === 'hp' ? 'text-hp' : key === 'mp' ? 'text-mp' : 'text-exp'
               } />
-              <span className="text-[10px] text-muted w-6">{label}</span>
+              <span className="text-xs text-muted w-7">{label}</span>
               <div className="flex-1">
                 <StatBar
                   value={data.current}
@@ -62,7 +62,7 @@ export default function AvatarStatusBars({ avatarUrl, compact = false, onClick }
                   showShimmer={key === 'exp'}
                 />
               </div>
-              <span className="text-[10px] text-muted w-14 text-right tabular-nums">
+              <span className="text-xs text-muted w-16 text-right tabular-nums">
                 <CountUp target={data.current} delay={delay} duration={1200} />/{data.max}
               </span>
             </div>
