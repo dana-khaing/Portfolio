@@ -4,7 +4,7 @@ import { character } from '../../data/character'
 
 const links = [
   { label: 'GitHub',    icon: 'github'    as const, value: 'dana-khaing',       href: character.contact.github,    color: 'text-primary' },
-  { label: 'LinkedIn',  icon: 'contact'   as const, value: 'Dana Khaing',       href: character.contact.linkedin,  color: 'text-def' },
+  { label: 'LinkedIn',  icon: 'linkedin'  as const, value: 'Dana Khaing',       href: character.contact.linkedin,  color: 'text-def' },
   { label: 'Email',     icon: 'mail'      as const, value: character.contact.email, href: `mailto:${character.contact.email}`, color: 'text-cyan' },
   { label: 'WhatsApp',  icon: 'whatsapp'  as const, value: '+44 7904 101667',   href: character.contact.whatsapp,  color: 'text-green' },
   { label: 'Instagram', icon: 'instagram' as const, value: '@lewis_by_dana',    href: character.contact.instagram, color: 'text-mag' },
