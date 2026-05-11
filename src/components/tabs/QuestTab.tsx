@@ -12,7 +12,7 @@ export default function QuestTab() {
       {character.quests.map((q, i) => (
         <motion.div
           key={q.name}
-          className="game-panel rounded p-3 border border-cyan/10 hover:border-cyan/40 transition-all duration-300 hover:shadow-[0_0_12px_rgba(0,255,200,0.1)] group"
+          className="game-panel rounded p-3 border border-cyan/10 hover:border-cyan/40 transition-all duration-300 hover:shadow-[0_0_12px_rgba(168,85,247,0.1)] group"
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: i * 0.1 }}

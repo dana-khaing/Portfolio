@@ -34,8 +34,8 @@ export default function App() {
         }}
       />
 
-      {/* Main content */}
-      <div className="relative z-10 flex-1 overflow-hidden">
+      {/* Main content — h-full needed so children can use h-full */}
+      <div className="relative z-10 flex-1 overflow-hidden h-full min-h-0">
         <AnimatePresence mode="wait">
           {view === 'home' ? (
             <HomeView
