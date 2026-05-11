@@ -32,13 +32,13 @@ export const character = {
     { name: 'Languages', value: 90, color: '#34d399' },
   ],
 
-  // Equipment (primary tools)
+  // Equipment (primary tools — one per category)
   equipment: [
-    { slot: 'Main Weapon', name: 'React.js' },
-    { slot: 'Off-hand',    name: 'TypeScript' },
-    { slot: 'Magic',       name: 'Node.js' },
-    { slot: 'Armor',       name: 'Tailwind CSS' },
-    { slot: 'Accessory',   name: 'Git' },
+    { slot: 'Main Weapon', name: 'React.js' },     // Frontend
+    { slot: 'Off-hand',    name: 'Node.js' },      // Backend
+    { slot: 'Magic Tome',  name: 'Python' },       // Language
+    { slot: 'Armor',       name: 'MySQL' },        // Database
+    { slot: 'Accessory',   name: 'Git' },          // Tools
   ],
 
   // Skills (tech stack)
