@@ -6,17 +6,18 @@ import { character } from '../../data/character'
 
 interface AvatarStatusBarsProps {
   avatarUrl: string
+  level: number
   compact?: boolean
   onClick?: () => void
 }
 
 const bars = [
-  { key: 'hp', label: 'HP', icon: 'hp' as const, color: 'bar-hp', data: character.hp, delay: 0 },
-  { key: 'mp', label: 'MP', icon: 'mp' as const, color: 'bar-mp', data: character.mp, delay: 0.2 },
+  { key: 'hp',  label: 'HP',  icon: 'hp'  as const, color: 'bar-hp',  data: character.hp,  delay: 0 },
+  { key: 'mp',  label: 'MP',  icon: 'mp'  as const, color: 'bar-mp',  data: character.mp,  delay: 0.2 },
   { key: 'exp', label: 'EXP', icon: 'exp' as const, color: 'bar-exp', data: character.exp, delay: 0.4 },
 ]
 
-export default function AvatarStatusBars({ avatarUrl, compact = false, onClick }: AvatarStatusBarsProps) {
+export default function AvatarStatusBars({ avatarUrl, level, compact = false, onClick }: AvatarStatusBarsProps) {
   return (
     <motion.div
       className={`game-panel-bright rounded p-3 cursor-pointer group transition-all duration-300 hover:border-cyan/60
@@ -32,15 +33,14 @@ export default function AvatarStatusBars({ avatarUrl, compact = false, onClick }
         <div className="flex items-center gap-2">
           <div className="relative flex-shrink-0">
             <div className="w-12 h-12 rounded overflow-hidden border border-cyan/40 group-hover:border-cyan/80 transition-colors animate-pulse-glow">
-              <img src={avatarUrl} alt="Dana Khaing" className="w-full h-full object-cover" />
+              <img src={avatarUrl} alt={character.name} className="w-full h-full object-cover" />
             </div>
-            {/* Rotating glow ring */}
             <div className="absolute inset-0 rounded border border-cyan/20 animate-pulse-glow" style={{ animationDelay: '1s' }} />
           </div>
           <div className="min-w-0">
             <div className="text-sm font-game text-primary truncate">{character.name}</div>
             <div className="text-xs text-cyan/70 truncate">{character.class}</div>
-            <div className="text-xs text-muted">Lv. {character.level}</div>
+            <div className="text-xs text-muted">Lv. {level}</div>
           </div>
         </div>
 

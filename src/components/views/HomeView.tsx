@@ -6,8 +6,10 @@ import BottomNav, { type TabKey } from '../BottomNav'
 
 interface HomeViewProps {
   avatarUrl: string
+  name: string
   repos: number
   followers: number
+  level: number
   activeTab: TabKey
   onTabSelect: (tab: TabKey) => void
   onAvatarClick: () => void
@@ -15,8 +17,10 @@ interface HomeViewProps {
 
 export default function HomeView({
   avatarUrl,
+  name,
   repos,
   followers,
+  level,
   activeTab,
   onTabSelect,
   onAvatarClick,
@@ -34,14 +38,14 @@ export default function HomeView({
         <div className="text-[10px] text-muted font-game tracking-widest uppercase">
           ◆ Dana Khaing / Portfolio
         </div>
-        <div className="text-[10px] text-cyan/50 font-game">Lv. 22</div>
+        <div className="text-[10px] text-cyan/50 font-game">Lv. {level}</div>
       </div>
 
       {/* Main area */}
       <div className="flex flex-1 overflow-hidden">
         {/* Left column: avatar HUD + quest log below */}
         <div className="w-64 flex-shrink-0 flex flex-col gap-3 p-3 border-r border-cyan/10 overflow-hidden">
-          <AvatarStatusBars avatarUrl={avatarUrl} onClick={onAvatarClick} />
+          <AvatarStatusBars avatarUrl={avatarUrl} level={level} onClick={onAvatarClick} />
           {/* Quest log fills the rest of the left column */}
           <div className="flex-1 overflow-hidden">
             <NotificationLog />
@@ -49,7 +53,7 @@ export default function HomeView({
         </div>
 
         {/* Center: Character stage */}
-        <CharacterStage repos={repos} followers={followers} />
+        <CharacterStage name={name} repos={repos} followers={followers} />
       </div>
 
       {/* Bottom nav — full width */}
