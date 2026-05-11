@@ -1,8 +1,17 @@
+export function calculateLevel(): number {
+  const born = new Date('2000-05-13')
+  const today = new Date()
+  let age = today.getFullYear() - born.getFullYear()
+  const m = today.getMonth() - born.getMonth()
+  if (m < 0 || (m === 0 && today.getDate() < born.getDate())) age--
+  return age
+}
+
 export const character = {
   name: 'Dana Khaing',
   class: 'Code Mage',
   subclass: 'Software Engineer',
-  level: 22,
+  birthday: '2000-05-13',
   location: 'London, UK',
   guild: 'Royal Holloway, University of London',
   hireable: true,
