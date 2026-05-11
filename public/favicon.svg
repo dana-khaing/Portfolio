@@ -1,5 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#0a0f0a"/>
-  <polygon points="16,4 20,12 28,13 22,19 24,27 16,23 8,27 10,19 4,13 12,12" fill="none" stroke="#00ffc8" stroke-width="2"/>
-  <polygon points="16,8 19,14 25,15 21,19 22,25 16,22 10,25 11,19 7,15 13,14" fill="#00ffc8" opacity="0.3"/>
+  <!-- Dark purple background -->
+  <rect width="32" height="32" rx="5" fill="#0d0a1a"/>
+  <!-- Outer glow ring -->
+  <circle cx="16" cy="16" r="13" fill="none" stroke="#a855f7" stroke-width="0.5" opacity="0.4"/>
+  <!-- ✦ four-pointed star -->
+  <path d="M16,3 L18.8,13 L29,16 L18.8,19 L16,29 L13.2,19 L3,16 L13.2,13 Z"
+        fill="#a855f7" opacity="0.25"/>
+  <path d="M16,3 L18.8,13 L29,16 L18.8,19 L16,29 L13.2,19 L3,16 L13.2,13 Z"
+        fill="none" stroke="#a855f7" stroke-width="1" stroke-linejoin="round"/>
+  <!-- Bright centre dot -->
+  <circle cx="16" cy="16" r="2.5" fill="#c084fc"/>
+  <!-- Inner cross lines for sparkle feel -->
+  <line x1="16" y1="10" x2="16" y2="22" stroke="#c084fc" stroke-width="0.8" opacity="0.5"/>
+  <line x1="10" y1="16" x2="22" y2="16" stroke="#c084fc" stroke-width="0.8" opacity="0.5"/>
 </svg>
