@@ -15,9 +15,10 @@
   }
 
   body {
-    background-color: #0a0f0a;
-    color: #e2f0e8;
+    background-color: #0d0a1a;
+    color: #ede9fe;
     font-family: 'Share Tech Mono', monospace;
+    font-size: 15px;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -26,14 +27,14 @@
     width: 4px;
   }
   ::-webkit-scrollbar-track {
-    background: #0d1a0d;
+    background: #130f1f;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(0, 255, 200, 0.3);
+    background: rgba(168, 85, 247, 0.3);
     border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 255, 200, 0.6);
+    background: rgba(168, 85, 247, 0.6);
   }
 }
 
@@ -48,31 +49,31 @@
       0deg,
       transparent,
       transparent 2px,
-      rgba(0, 0, 0, 0.08) 2px,
-      rgba(0, 0, 0, 0.08) 4px
+      rgba(80, 0, 120, 0.05) 2px,
+      rgba(80, 0, 120, 0.05) 4px
     );
   }
 
   /* Panel styles */
   .game-panel {
-    background: rgba(13, 26, 13, 0.9);
-    border: 1px solid rgba(0, 255, 180, 0.2);
+    background: rgba(19, 15, 31, 0.9);
+    border: 1px solid rgba(168, 85, 247, 0.2);
     backdrop-filter: blur(4px);
   }
 
   .game-panel-bright {
-    background: rgba(13, 26, 13, 0.95);
-    border: 1px solid rgba(0, 255, 180, 0.4);
-    box-shadow: 0 0 12px rgba(0, 255, 180, 0.1), inset 0 0 20px rgba(0, 255, 180, 0.02);
+    background: rgba(19, 15, 31, 0.95);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.1), inset 0 0 20px rgba(168, 85, 247, 0.03);
   }
 
   /* Glow effects */
   .glow-cyan {
-    box-shadow: 0 0 8px rgba(0, 255, 200, 0.5), 0 0 16px rgba(0, 255, 200, 0.2);
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.5), 0 0 16px rgba(168, 85, 247, 0.2);
   }
 
   .text-glow-cyan {
-    text-shadow: 0 0 8px rgba(0, 255, 200, 0.7);
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.7);
   }
 
   /* Shimmer animation for bars */
@@ -81,15 +82,15 @@
     animation: shimmer 2.5s ease-in-out infinite;
   }
 
-  /* HP/MP/EXP bar gradient backgrounds */
+  /* HP/MP/EXP bar gradient backgrounds — Purple Mage palette */
   .bar-hp {
-    background: linear-gradient(90deg, #00d4aa, #00ffc8);
+    background: linear-gradient(90deg, #7c3aed, #a855f7, #c084fc);
   }
   .bar-mp {
     background: linear-gradient(90deg, #0694a2, #06b6d4);
   }
   .bar-sp {
-    background: linear-gradient(90deg, #16a34a, #22c55e);
+    background: linear-gradient(90deg, #be185d, #ec4899, #f472b6);
   }
   .bar-exp {
     background: linear-gradient(90deg, #d97706, #f59e0b, #fbbf24);
@@ -98,15 +99,15 @@
     background: linear-gradient(90deg, #dc2626, #f87171);
   }
   .bar-def {
-    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    background: linear-gradient(90deg, #4338ca, #818cf8);
   }
   .bar-mag {
-    background: linear-gradient(90deg, #7c3aed, #a78bfa);
+    background: linear-gradient(90deg, #a21caf, #e879f9, #f0abfc);
   }
   .bar-spd {
-    background: linear-gradient(90deg, #d97706, #fbbf24);
+    background: linear-gradient(90deg, #059669, #34d399);
   }
   .bar-int {
-    background: linear-gradient(90deg, #059669, #34d399);
+    background: linear-gradient(90deg, #7c3aed, #c084fc);
   }
 }

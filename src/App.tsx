@@ -24,11 +24,11 @@ export default function App() {
 
       {/* Background grid */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-5"
+        className="absolute inset-0 pointer-events-none opacity-[0.06]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(0,255,200,0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,255,200,0.3) 1px, transparent 1px)
+            linear-gradient(rgba(168,85,247,0.4) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(168,85,247,0.4) 1px, transparent 1px)
           `,
           backgroundSize: '48px 48px',
         }}
