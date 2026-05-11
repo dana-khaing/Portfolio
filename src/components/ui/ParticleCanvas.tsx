@@ -40,7 +40,11 @@ export default function ParticleCanvas() {
       for (const p of particles) {
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(0, 255, 200, ${p.opacity})`
+        // Alternate between purple and fuchsia particles
+        const r = p.size > 1 ? 232 : 168
+        const g = p.size > 1 ? 121 : 85
+        const b = p.size > 1 ? 249 : 247
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${p.opacity})`
         ctx.fill()
 
         p.y -= p.speed
