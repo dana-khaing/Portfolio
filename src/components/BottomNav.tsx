@@ -44,9 +44,9 @@ export default function BottomNav({ active, onSelect }: BottomNavProps) {
             whileTap={{ scale: 0.95 }}
           >
             <div className={`transition-all duration-200 ${isActive ? 'drop-shadow-[0_0_6px_rgba(0,255,200,0.8)]' : 'group-hover:drop-shadow-[0_0_4px_rgba(0,255,200,0.4)]'}`}>
-              <GameIcon name={tab.icon} size={18} />
+              <GameIcon name={tab.icon} size={22} />
             </div>
-            <span className="text-[9px] font-game tracking-wider">{tab.label}</span>
+            <span className="text-[11px] font-game tracking-wider">{tab.label}</span>
           </motion.button>
         )
       })}

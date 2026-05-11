@@ -32,7 +32,7 @@ export default function StatsGrid() {
     <div className="grid grid-cols-3 gap-3 text-xs font-game">
       {/* Stats column */}
       <div className="flex flex-col gap-1.5">
-        <div className="text-[10px] text-cyan/50 uppercase tracking-widest mb-1">◆ Stats</div>
+        <div className="text-xs text-cyan/50 uppercase tracking-widest mb-1">◆ Stats</div>
         {character.stats.map((s, i) => (
           <motion.div
             key={s.key}
@@ -52,7 +52,7 @@ export default function StatsGrid() {
 
       {/* Attributes column */}
       <div className="flex flex-col gap-1.5">
-        <div className="text-[10px] text-cyan/50 uppercase tracking-widest mb-1">◆ Attributes</div>
+        <div className="text-xs text-cyan/50 uppercase tracking-widest mb-1">◆ Attributes</div>
         {character.attributes.map((a, i) => (
           <motion.div
             key={a.name}
@@ -62,8 +62,8 @@ export default function StatsGrid() {
             transition={{ delay: i * 0.08 + 0.4 }}
           >
             <div className="flex justify-between items-center">
-              <span className="text-muted text-[10px]">{a.name}</span>
-              <span className="text-[10px]" style={{ color: a.color }}>{a.value}</span>
+              <span className="text-muted text-xs">{a.name}</span>
+              <span className="text-xs" style={{ color: a.color }}>{a.value}</span>
             </div>
             <StatBar
               value={a.value}
@@ -78,7 +78,7 @@ export default function StatsGrid() {
 
       {/* Equipment column */}
       <div className="flex flex-col gap-1.5">
-        <div className="text-[10px] text-cyan/50 uppercase tracking-widest mb-1">◆ Equipment</div>
+        <div className="text-xs text-cyan/50 uppercase tracking-widest mb-1">◆ Equipment</div>
         {character.equipment.map((e, i) => (
           <motion.div
             key={e.slot}
@@ -87,7 +87,7 @@ export default function StatsGrid() {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: i * 0.08 + 0.5 }}
           >
-            <span className="text-[9px] text-muted/60">{e.slot}</span>
+            <span className="text-[11px] text-muted/60">{e.slot}</span>
             <span className="text-[11px] text-primary/90 group-hover:text-cyan transition-colors group-hover:translate-x-0.5 transform duration-150">
               {e.name}
             </span>

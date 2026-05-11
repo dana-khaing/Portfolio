@@ -28,7 +28,7 @@ export default function StatBlock() {
 
       {/* EXP */}
       <div className="mt-1">
-        <div className="flex items-center justify-between text-[10px] text-muted font-game mb-1">
+        <div className="flex items-center justify-between text-xs text-muted font-game mb-1">
           <div className="flex items-center gap-1">
             <GameIcon name="exp" size={12} className="text-exp" />
             <span>Exp</span>

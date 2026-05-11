@@ -27,15 +27,15 @@ export default function QuestTab() {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-0.5">
                 <span className="text-sm font-game text-primary group-hover:text-cyan transition-colors">{q.name}</span>
-                <span className="text-[10px] text-muted border border-muted/30 px-1.5 rounded">{q.type}</span>
-                <span className="ml-auto text-[10px] text-green/70">{q.status}</span>
+                <span className="text-xs text-muted border border-muted/30 px-1.5 rounded">{q.type}</span>
+                <span className="ml-auto text-xs text-green/70">{q.status}</span>
               </div>
               <div className="text-[11px] text-cyan/60 font-game mb-1">{q.subtitle}</div>
-              <p className="text-[10px] text-muted leading-relaxed mb-2">{q.description}</p>
+              <p className="text-xs text-muted leading-relaxed mb-2">{q.description}</p>
 
               <div className="flex items-center gap-2 flex-wrap">
                 {q.tech.map(t => (
-                  <span key={t} className="text-[9px] font-game px-1.5 py-0.5 rounded bg-cyan/5 border border-cyan/20 text-cyan/70">
+                  <span key={t} className="text-[11px] font-game px-1.5 py-0.5 rounded bg-cyan/5 border border-cyan/20 text-cyan/70">
                     {t}
                   </span>
                 ))}
@@ -43,7 +43,7 @@ export default function QuestTab() {
                   href={q.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-auto text-[10px] font-game text-cyan/50 hover:text-cyan transition-colors flex items-center gap-1"
+                  className="ml-auto text-xs font-game text-cyan/50 hover:text-cyan transition-colors flex items-center gap-1"
                   onClick={e => e.stopPropagation()}
                 >
                   ↗ GitHub
