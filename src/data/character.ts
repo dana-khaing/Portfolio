@@ -158,6 +158,9 @@ export const character = {
     email: 'dana1352000@gmail.com',
     github: 'https://github.com/dana-khaing',
     linkedin: 'https://www.linkedin.com/in/dana-khaing',
+    facebook: 'https://www.facebook.com/profile.php?id=100008858651331',
+    instagram: 'https://www.instagram.com/lewis_by_dana/',
+    whatsapp: 'https://wa.me/447904101667',
     location: 'Isleworth, London, UK',
   },
 
