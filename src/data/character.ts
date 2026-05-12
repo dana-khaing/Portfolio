@@ -85,7 +85,7 @@ export const character = {
     {
       rank: 'S',
       name: 'KUMA',
-      subtitle: 'Student Community Network',
+      subtitle: 'Social Media Platform',
       type: 'Solo Quest',
       description: 'Full-stack social media platform for Royal Holloway students. Features profiles, follow/unfollow, posts, reactions, and real-time search.',
       tech: ['Next.js', 'Node.js', 'Prisma', 'MySQL', 'Clerk'],
