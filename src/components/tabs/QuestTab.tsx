@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion'
 import { character } from '../../data/character'
 
+const statusColors: Record<string, string> = {
+  COMPLETED: 'text-green/70',
+  ACTIVE: 'text-exp animate-pulse',
+}
+
 const rankColors: Record<string, string> = {
-  S: 'text-exp border-exp/60 bg-exp/10 shadow-[0_0_8px_rgba(245,158,11,0.3)]',
-  A: 'text-cyan border-cyan/60 bg-cyan/10 shadow-[0_0_8px_rgba(168,85,247,0.3)]',
+  S: 'text-exp border-exp/60 bg-exp/10 shadow-[0_0_8px_rgba(245,158,11,0.4)]',
+  A: 'text-cyan border-cyan/60 bg-cyan/10 shadow-[0_0_8px_rgba(0,255,255,0.3)]',
+  B: 'text-green border-green/60 bg-green/10 shadow-[0_0_8px_rgba(74,222,128,0.3)]',
+  C: 'text-muted border-muted/40 bg-muted/5 shadow-none',
 }
 
 export default function QuestTab() {
@@ -29,7 +36,7 @@ export default function QuestTab() {
               <div className="flex items-center gap-2 mb-0.5">
                 <span className="text-sm font-game text-primary group-hover:text-cyan transition-colors">{q.name}</span>
                 <span className="text-xs text-muted border border-muted/30 px-1.5 rounded">{q.type}</span>
-                <span className="ml-auto text-xs text-green/70">{q.status}</span>
+                <span className={`ml-auto text-xs ${statusColors[q.status] ?? 'text-green/70'}`}>{q.status}</span>
               </div>
               <div className="text-[11px] text-cyan/60 font-game mb-1">{q.subtitle}</div>
               <p className="text-xs text-muted leading-relaxed mb-2">{q.description}</p>
