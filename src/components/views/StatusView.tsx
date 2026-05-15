@@ -28,7 +28,6 @@ export default function StatusView({ avatarUrl, name, location, followers, level
     skill:   <SkillTab />,
     quest:   <QuestTab />,
     edu:     <EduTab />,
-    party:   <EduTab />,
     contact: <ContactTab />,
   }
 
@@ -57,9 +56,9 @@ export default function StatusView({ avatarUrl, name, location, followers, level
       </div>
 
       {/* Main content */}
-      <div className="flex flex-1 gap-4 p-4 overflow-hidden">
-        {/* Left: avatar + vitals */}
-        <div className="w-56 flex-shrink-0 flex flex-col gap-3">
+      <div className="flex flex-1 gap-3 p-2 md:gap-4 md:p-4 overflow-hidden">
+        {/* Left: avatar + vitals — desktop only */}
+        <div className="hidden md:flex w-56 flex-shrink-0 flex-col gap-3">
           <AvatarStatusBars avatarUrl={avatarUrl} level={level} onClick={onBack} />
           <div className="game-panel rounded p-3 text-[10px] font-game flex flex-col gap-1.5 text-muted">
             <div className="flex justify-between">
