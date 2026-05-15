@@ -43,16 +43,16 @@ export default function CharacterStage({ name, repos, followers }: { name: strin
 
       {/* Character portrait placeholder — centered art area */}
       <motion.div
-        className="relative z-10 flex flex-col items-center gap-6"
+        className="relative z-10 flex flex-col items-center gap-3 sm:gap-6"
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
       >
         {/* Decorative circle / portrait frame */}
         <div className="relative">
-          <div className="w-48 h-48 rounded-full border-2 border-cyan/30 flex items-center justify-center
+          <div className="w-32 h-32 sm:w-48 sm:h-48 rounded-full border-2 border-cyan/30 flex items-center justify-center
             bg-gradient-to-b from-cyan/5 to-transparent animate-pulse-glow">
-            <div className="w-40 h-40 rounded-full border border-cyan/20 flex items-center justify-center
+            <div className="w-24 h-24 sm:w-40 sm:h-40 rounded-full border border-cyan/20 flex items-center justify-center
               bg-gradient-to-b from-green/5 to-transparent">
               <span className="text-6xl select-none">✦</span>
             </div>
@@ -64,7 +64,7 @@ export default function CharacterStage({ name, repos, followers }: { name: strin
 
         {/* Name */}
         <div className="text-center">
-          <h1 className="text-4xl font-game text-primary tracking-widest">
+          <h1 className="text-2xl sm:text-4xl font-game text-primary tracking-widest">
             <GlitchText text={name} />
           </h1>
           <div className="text-sm text-cyan/80 mt-1 tracking-[0.3em] uppercase">
@@ -76,7 +76,7 @@ export default function CharacterStage({ name, repos, followers }: { name: strin
         </div>
 
         {/* Typewriter tagline */}
-        <div className="text-center font-game text-muted text-base h-7">
+        <div className="text-center font-game text-muted text-sm sm:text-base h-6 sm:h-7">
           <span className="text-green/80">&gt; </span>
           <span>{displayed}</span>
           <span className="animate-pulse text-cyan">|</span>
@@ -84,7 +84,7 @@ export default function CharacterStage({ name, repos, followers }: { name: strin
 
         {/* Live stats row */}
         <motion.div
-          className="flex items-center gap-6 text-xs text-muted"
+          className="flex items-center gap-3 sm:gap-6 text-[10px] sm:text-xs text-muted"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}

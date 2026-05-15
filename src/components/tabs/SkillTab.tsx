@@ -38,7 +38,7 @@ export default function SkillTab() {
   return (
     <div className="h-full overflow-y-auto pr-1">
       {/* 2-column grid: Languages+Frontend, Backend+Database, Tools full-width */}
-      <div className="grid grid-cols-2 gap-3 mb-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
         {groups.slice(0, 4).map(([group, skills], gi) => {
           const meta = groupMeta[group]
           return (

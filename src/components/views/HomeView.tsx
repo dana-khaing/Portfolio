@@ -42,12 +42,12 @@ export default function HomeView({
       </div>
 
       {/* Main area */}
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-col md:flex-row flex-1 overflow-hidden">
         {/* Left column: avatar HUD + quest log below */}
-        <div className="w-64 flex-shrink-0 flex flex-col gap-3 p-3 border-r border-cyan/10 overflow-hidden">
+        <div className="w-full md:w-64 flex-shrink-0 flex flex-col gap-3 p-3 border-b border-cyan/10 md:border-b-0 md:border-r overflow-hidden">
           <AvatarStatusBars avatarUrl={avatarUrl} level={level} onClick={onAvatarClick} />
-          {/* Quest log fills the rest of the left column */}
-          <div className="flex-1 overflow-hidden">
+          {/* Quest log — desktop only */}
+          <div className="hidden md:block flex-1 overflow-hidden">
             <NotificationLog />
           </div>
         </div>

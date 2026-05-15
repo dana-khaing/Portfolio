@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import GameIcon from './ui/GameIcon'
 
-export type TabKey = 'status' | 'skill' | 'quest' | 'edu' | 'party' | 'contact'
+export type TabKey = 'status' | 'skill' | 'quest' | 'edu' | 'contact'
 
 interface Tab {
   key: TabKey
@@ -14,7 +14,6 @@ const TABS: Tab[] = [
   { key: 'skill',   label: 'SKILL',   icon: 'skill' },
   { key: 'quest',   label: 'QUEST',   icon: 'quest' },
   { key: 'edu',     label: 'EDU',     icon: 'edu' },
-  { key: 'party',   label: 'PARTY',   icon: 'party' },
   { key: 'contact', label: 'CONTACT', icon: 'contact' },
 ]
 
@@ -25,14 +24,14 @@ interface BottomNavProps {
 
 export default function BottomNav({ active, onSelect }: BottomNavProps) {
   return (
-    <div className="flex items-center justify-center gap-1 px-4 py-2">
+    <div className="flex items-center justify-center gap-0 sm:gap-1 px-2 sm:px-4 py-1.5 sm:py-2">
       {TABS.map((tab, i) => {
         const isActive = tab.key === active
         return (
           <motion.button
             key={tab.key}
             onClick={() => onSelect(tab.key)}
-            className={`flex flex-col items-center gap-0.5 px-4 py-2 rounded transition-all duration-200 group
+            className={`flex flex-col items-center gap-0.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded transition-all duration-200 group
               ${isActive
                 ? 'text-cyan border-b-2 border-cyan bg-cyan/5'
                 : 'text-muted hover:text-cyan/70 border-b-2 border-transparent'
@@ -46,7 +45,7 @@ export default function BottomNav({ active, onSelect }: BottomNavProps) {
             <div className={`transition-all duration-200 ${isActive ? 'drop-shadow-[0_0_6px_rgba(168,85,247,0.8)]' : 'group-hover:drop-shadow-[0_0_4px_rgba(168,85,247,0.4)]'}`}>
               <GameIcon name={tab.icon} size={22} />
             </div>
-            <span className="text-[11px] font-game tracking-wider">{tab.label}</span>
+            <span className="text-[11px] font-game tracking-wider hidden sm:block">{tab.label}</span>
           </motion.button>
         )
       })}
