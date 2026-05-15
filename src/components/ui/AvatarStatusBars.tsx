@@ -7,7 +7,6 @@ import { character } from '../../data/character'
 interface AvatarStatusBarsProps {
   avatarUrl: string
   level: number
-  compact?: boolean
   onClick?: () => void
 }
 
@@ -17,20 +16,20 @@ const bars = [
   { key: 'exp', label: 'EXP', icon: 'exp' as const, color: 'bar-exp', data: character.exp, delay: 0.4 },
 ]
 
-export default function AvatarStatusBars({ avatarUrl, level, compact = false, onClick }: AvatarStatusBarsProps) {
+export default function AvatarStatusBars({ avatarUrl, level, onClick }: AvatarStatusBarsProps) {
   return (
     <motion.div
-      className={`game-panel-bright rounded p-3 cursor-pointer group transition-all duration-300 hover:border-cyan/60
-        ${compact ? 'flex items-center gap-3' : ''}`}
+      className="game-panel-bright rounded p-3 cursor-pointer group transition-all duration-300 hover:border-cyan/60"
       initial={{ x: -40, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       onClick={onClick}
       whileHover={{ scale: 1.02 }}
     >
-      <div className={`flex ${compact ? 'gap-3 items-center' : 'flex-col gap-2'}`}>
+      {/* Mobile: horizontal (avatar left, bars right). Desktop: vertical (avatar top, bars below). */}
+      <div className="flex items-center gap-3 md:flex-col md:items-stretch md:gap-2">
         {/* Avatar + name row */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-shrink-0">
           <div className="relative flex-shrink-0">
             <div className="w-12 h-12 rounded overflow-hidden border border-cyan/40 group-hover:border-cyan/80 transition-colors animate-pulse-glow">
               <img src={avatarUrl} alt={character.name} className="w-full h-full object-cover" />
@@ -45,7 +44,7 @@ export default function AvatarStatusBars({ avatarUrl, level, compact = false, on
         </div>
 
         {/* HP / MP / EXP bars */}
-        <div className={`flex flex-col gap-1.5 ${compact ? 'min-w-[140px]' : ''}`}>
+        <div className="flex flex-col gap-1.5 flex-1 min-w-0 md:flex-initial">
           {bars.map(({ key, label, icon, color, data, delay }) => (
             <div key={key} className="flex items-center gap-1.5">
               <GameIcon name={icon} size={12} className={

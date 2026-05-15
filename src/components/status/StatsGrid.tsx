@@ -29,7 +29,7 @@ const statTextColors: Record<string, string> = {
 
 export default function StatsGrid() {
   return (
-    <div className="grid grid-cols-3 gap-3 text-xs font-game">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-game">
       {/* Stats column */}
       <div className="flex flex-col gap-1.5">
         <div className="text-xs text-cyan/50 uppercase tracking-widest mb-1">◆ Stats</div>
