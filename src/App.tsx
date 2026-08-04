@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import HomeView from './components/views/HomeView'
 import StatusView from './components/views/StatusView'
+import GlitchOverlay from './components/ui/GlitchOverlay'
 import { useGitHub } from './hooks/useGitHub'
+import { usePeriodicGlitch } from './hooks/usePeriodicGlitch'
 import { calculateLevel } from './data/character'
 import { type TabKey } from './components/BottomNav'
 
@@ -13,6 +15,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<TabKey>('status')
   const github = useGitHub()
   const level = calculateLevel()
+  const glitching = usePeriodicGlitch()
 
   const handleTabSelect = (tab: TabKey) => {
     if (view === 'home') setView('status')
@@ -21,6 +24,8 @@ export default function App() {
 
   return (
     <div className="w-screen h-screen bg-bg flex flex-col relative overflow-hidden">
+      <GlitchOverlay active={glitching} />
+
       {/* CRT scanline overlay */}
       <div className="scanlines" />
 
