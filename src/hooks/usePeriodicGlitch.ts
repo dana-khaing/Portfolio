@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const INTERVAL_MS = 60_000
-const GLITCH_DURATION_MS = 900
+const GLITCH_DURATION_MS = 3_500
 
 export function usePeriodicGlitch() {
   const [active, setActive] = useState(false)
