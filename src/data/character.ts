@@ -307,7 +307,7 @@ export const character = {
 
   // Contact
   contact: {
-    email: 'dana1352000@gmail.com',
+    email: 'danakhaing13@gmail.com',
     github: 'https://github.com/dana-khaing',
     linkedin: 'https://www.linkedin.com/in/dana-khaing',
     facebook: 'https://www.facebook.com/profile.php?id=100008858651331',
