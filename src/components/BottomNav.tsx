@@ -31,6 +31,8 @@ export default function BottomNav({ active, onSelect }: BottomNavProps) {
           <motion.button
             key={tab.key}
             onClick={() => onSelect(tab.key)}
+            aria-label={tab.label}
+            aria-current={isActive ? 'page' : undefined}
             className={`flex flex-col items-center gap-0.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded transition-all duration-200 group
               ${isActive
                 ? 'text-cyan border-b-2 border-cyan bg-cyan/5'
