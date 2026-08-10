@@ -54,7 +54,20 @@ export default function CharacterStage({ name, repos, followers }: { name: strin
             bg-gradient-to-b from-cyan/5 to-transparent animate-pulse-glow">
             <div className="w-24 h-24 sm:w-40 sm:h-40 rounded-full border border-cyan/20 flex items-center justify-center
               bg-gradient-to-b from-green/5 to-transparent">
-              <span className="text-6xl select-none">✦</span>
+              <motion.span
+                className="text-6xl select-none inline-block"
+                animate={{
+                  scale: [1, 1.15, 1],
+                  filter: [
+                    'drop-shadow(0 0 4px rgba(168,85,247,0.5))',
+                    'drop-shadow(0 0 18px rgba(168,85,247,0.9)) drop-shadow(0 0 30px rgba(192,132,252,0.5))',
+                    'drop-shadow(0 0 4px rgba(168,85,247,0.5))',
+                  ],
+                }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                ✦
+              </motion.span>
             </div>
           </div>
           {/* Orbit ring */}
