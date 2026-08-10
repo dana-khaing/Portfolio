@@ -7,14 +7,18 @@ export function usePeriodicGlitch() {
   const [active, setActive] = useState(false)
 
   useEffect(() => {
+    let offTimeout: ReturnType<typeof setTimeout>
+
     const trigger = () => {
       setActive(true)
-      const off = setTimeout(() => setActive(false), GLITCH_DURATION_MS)
-      return off
+      offTimeout = setTimeout(() => setActive(false), GLITCH_DURATION_MS)
     }
 
     const id = setInterval(trigger, INTERVAL_MS)
-    return () => clearInterval(id)
+    return () => {
+      clearInterval(id)
+      clearTimeout(offTimeout)
+    }
   }, [])
 
   return active
