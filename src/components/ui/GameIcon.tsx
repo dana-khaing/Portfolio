@@ -72,7 +72,7 @@ export default function GameIcon({ name, size = 16, className = '' }: GameIconPr
     ),
     skill: (
       <svg width={size} height={size} viewBox="0 0 16 16" fill="none" className={className}>
-        <path d="M8 2L10 6L14 7L11 10L12 14L8 12L4 14L5 10L2 7L6 6L8 2Z" fill="currentColor" opacity="0.3" stroke="currentColor" strokeWidth="1"/>
+        <path d="M8 2L10 6L14 7L11 10L12 14L8 12L4 14L5 10L2 7L6 6L8 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" fill="currentColor" fillOpacity="0.15"/>
       </svg>
     ),
     quest: (
