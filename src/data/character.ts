@@ -33,12 +33,13 @@ export const character = {
   ],
 
   // Tech attributes (used in attributes grid)
+  // barColor picks which stat-bar gradient (see StatColor) renders the progress bar.
   attributes: [
-    { name: 'Frontend',  value: 90, color: '#f87171' },
-    { name: 'Backend',   value: 84, color: '#60a5fa' },
-    { name: 'Database',  value: 80, color: '#a78bfa' },
-    { name: 'Mobile',    value: 78, color: '#fbbf24' },
-    { name: 'Languages', value: 92, color: '#34d399' },
+    { name: 'Frontend',  value: 90, color: '#f87171', barColor: 'atk' as const },
+    { name: 'Backend',   value: 84, color: '#60a5fa', barColor: 'def' as const },
+    { name: 'Database',  value: 80, color: '#a78bfa', barColor: 'mag' as const },
+    { name: 'Mobile',    value: 78, color: '#fbbf24', barColor: 'spd' as const },
+    { name: 'Languages', value: 92, color: '#34d399', barColor: 'int' as const },
   ],
 
   // Equipment (primary tools — one per category)

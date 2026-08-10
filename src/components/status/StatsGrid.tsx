@@ -68,7 +68,7 @@ export default function StatsGrid() {
             <StatBar
               value={a.value}
               max={100}
-              colorClass={statBarColors[character.stats.find(s => s.label.includes(a.name.split(' ')[0]))?.color ?? 'atk']}
+              colorClass={statBarColors[a.barColor]}
               delay={i * 0.08 + 0.4}
               height="h-1.5"
             />
