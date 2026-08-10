@@ -6,7 +6,24 @@ interface Particle {
   size: number
   speed: number
   opacity: number
-  opacityDir: number
+  swayAmp: number
+  swaySpeed: number
+  swayPhase: number
+}
+
+const PARTICLE_COUNT = 60
+
+function spawnParticle(canvas: HTMLCanvasElement, y = canvas.height + Math.random() * 10): Particle {
+  return {
+    x: Math.random() * canvas.width,
+    y,
+    size: Math.random() * 1.8 + 0.4,
+    speed: Math.random() * 0.5 + 0.25,
+    opacity: Math.random() * 0.5 + 0.3,
+    swayAmp: Math.random() * 10 + 3,
+    swaySpeed: Math.random() * 0.02 + 0.01,
+    swayPhase: Math.random() * Math.PI * 2,
+  }
 }
 
 export default function ParticleCanvas() {
@@ -25,35 +42,33 @@ export default function ParticleCanvas() {
     resize()
     window.addEventListener('resize', resize)
 
-    const particles: Particle[] = Array.from({ length: 60 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 1.5 + 0.3,
-      speed: Math.random() * 0.4 + 0.1,
-      opacity: Math.random() * 0.5 + 0.1,
-      opacityDir: Math.random() > 0.5 ? 1 : -1,
-    }))
+    // Spread the initial batch across the full height so the rise already looks
+    // in progress on load; every respawn after that originates from the bottom.
+    const particles: Particle[] = Array.from({ length: PARTICLE_COUNT }, () =>
+      spawnParticle(canvas, Math.random() * canvas.height)
+    )
 
+    let frame = 0
     let animId: number
     const draw = () => {
+      frame++
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       for (const p of particles) {
+        // Fades in as it lifts off the bottom, fades out again near the top —
+        // an ember arc rather than a flat, ever-present drift.
+        const riseProgress = Math.min(Math.max(1 - p.y / canvas.height, 0), 1)
+        const fade = Math.sin(riseProgress * Math.PI)
+        const sway = Math.sin(frame * p.swaySpeed + p.swayPhase) * p.swayAmp
+
         ctx.beginPath()
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
+        ctx.arc(p.x + sway, p.y, p.size, 0, Math.PI * 2)
         // Alternate between purple and fuchsia particles
-        const r = p.size > 1 ? 232 : 168
-        const g = p.size > 1 ? 121 : 85
-        const b = p.size > 1 ? 249 : 247
-        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${p.opacity})`
+        const [r, g, b] = p.size > 1.2 ? [232, 121, 249] : [168, 85, 247]
+        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${p.opacity * fade})`
         ctx.fill()
 
         p.y -= p.speed
-        p.opacity += p.opacityDir * 0.003
-        if (p.opacity >= 0.6 || p.opacity <= 0.05) p.opacityDir *= -1
-        if (p.y < -5) {
-          p.y = canvas.height + 5
-          p.x = Math.random() * canvas.width
-        }
+        if (p.y < -5) Object.assign(p, spawnParticle(canvas))
       }
       animId = requestAnimationFrame(draw)
     }
